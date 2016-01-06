@@ -12,9 +12,6 @@ add_action( 'plugins_loaded', 'my_plugins_loaded' );
 
 /**
  * Fires on plugins_loaded hook.
- *
- * @param  none
- * @return none
  */
 function my_plugins_loaded()
 {
@@ -23,15 +20,9 @@ function my_plugins_loaded()
 
 /**
  * Fires on admin_enqueue_scripts hook
- *
- * @param  none
- * @return none
  */
 function admin_enqueue_scripts( $hook_suffix )
 {
-    /*
-     * 管理画面のpost.phpまたはpost-new.phpでのみjavascript及びcssを追加
-     */
     if ( 'post-new.php' === $hook_suffix || 'post.php' === $hook_suffix ) {
         wp_enqueue_script(
             'alert-autosave-error',
